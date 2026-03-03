@@ -20,7 +20,7 @@ Este repositorio contiene una solución para el despliegue y desmantelamiento de
 ### Script de Creación (`crear_usuarios.sh`)
 **Gestión Automatizada:** Crea usuarios y sus respectivos directorios `/home`. Asigna una contraseña temporal y fuerza al usuario a cambiarla en su primer inicio de sesión. Es capaz de procesar listas extensas en cuestión de segundos.
 
-### Script de Borrado (`eliminar_usuarios.sh`)
+### Script de Eliminación (`eliminar_usuarios.sh`)
 **Limpieza Profunda:** Elimina la cuenta y borra de forma recursiva la carpeta personal (`userdel -r`). Además, implementa redirección de errores (`2>/dev/null`) para una ejecución limpia.
 
 ---
@@ -37,3 +37,22 @@ dos2unix *.sh *.txt
 
 # Dar permisos de ejecución
 chmod +x crear_usuarios.sh eliminar_usuarios.sh
+```
+### 2. Configuración del entorno
+Edita el archivo `usuarios.txt`. Añade un nombre por línea, serán los nombres de los usuarios creados.
+
+### 3. Ejecución
+El uso de `sudo` es obligatorio para ejecutar los scripts.
+
+```bash
+sudo ./crear_usuarios.sh
+```
+
+```bash
+sudo ./eliminar_usuarios.sh
+```
+
+De esta manera los scripts serán ejecutados de forma satisfactoria.
+
+---
+**Autor:** Álvaro García Alcázar - Estudiante de 1º ASIR
