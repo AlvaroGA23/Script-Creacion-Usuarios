@@ -39,7 +39,7 @@ sudo apt install whois -y
 chmod +x crear_usuarios.sh eliminar_usuarios.sh
 ```
 ### 2. Configuración del entorno
-Edita el archivo `usuarios.txt`. Añade un nombre por línea, serán los nombres de los usuarios creados.
+Edita el archivo `usuarios.txt`. Añade un nombre por línea, serán los nombres de los usuarios creados. Recuerda que este archivo debe estar en la misma carpeta que los scripts.
 
 ### 3. Ejecución
 El uso de `sudo` es obligatorio para ejecutar los scripts.
