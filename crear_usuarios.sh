@@ -1,29 +1,23 @@
 #!/bin/bash
-
+# Leemos las líneas del fichero
 FICHERO="usuarios.txt"
-PASSWORD="Bienvenido2026"
+while read i
+do
+    # Me quedo con el nombre de la cuenta
+    usuario=$(echo $i | cut -d: -f1)
+    
+    # Me quedo con la contraseña
+    contra=$(echo $i | cut -d: -f2)
+    
+    # Encriptamos la contraseña usando el algoritmo SHA-512
+    encriptada=$(mkpasswd -m sha-512 $contra)
+    
+    # Creamos el usuario con su carpeta home, shell bash y contraseña encriptada
+    useradd -m -s /bin/bash -p $encriptada $usuario
 
-# Comprobar si el archivo existe
-if [ ! -f $FICHERO ]; then
-    echo "Error: No encuentro el archivo $FICHERO"
-    exit 1
-fi
+echo "Usuario $usuario creado."
+done < $FICHERO
 
-while read -r NOMBRE_REAL; do
-    echo "--- Procesando a: $NOMBRE_REAL ---"
-
-    # 1. Creamos el usuario con su carpeta de inicio (-m)
-    sudo useradd -m "$NOMBRE_REAL"
-
-    # 2. Le asignamos la contraseña automáticamente
-    # Explicación: mandamos "usuario:contraseña" al comando chpasswd
-    echo "$NOMBRE_REAL:$PASSWORD" | sudo chpasswd
-
-    # 3. (Opcional) Forzamos a que cambie la contraseña al entrar por primera vez
-    # Esto es muy de SysAdmin profesional
-    sudo chage -d 0 "$NOMBRE_REAL"
-
-    echo "Usuario $NOMBRE_REAL configurado con éxito."
-done < "$FICHERO"
-
-echo "¡Todos los usuarios han sido creados con la clave: $PASSWORD!"
+echo "--------------------------------------------"
+echo "¡Usuarios creados con éxito! :)"
+echo "--------------------------------------------"
