@@ -28,12 +28,12 @@ Este repositorio contiene una solución para el despliegue y desmantelamiento de
 ## Guía de Uso
 
 ### 1. Preparación del entorno
-Asegúrate de que los archivos tienen el formato de fin de línea correcto para Linux (LF) y concede permisos de ejecución:
+Será necesario instalar whois para poder emplear el comando `mkpasswd`. También será importante dar permisos a los archivos para que los scripts se ejecuten sin problemas:
 
 ```bash
-# Limpiar formatos de Windows (si es necesario)
-sudo apt install dos2unix -y
-dos2unix *.sh *.txt
+# Instalación de whois
+sudo apt update
+sudo apt install who -y
 
 # Dar permisos de ejecución
 chmod +x crear_usuarios.sh eliminar_usuarios.sh
