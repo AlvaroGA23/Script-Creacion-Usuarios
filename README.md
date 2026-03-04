@@ -6,7 +6,7 @@
 
 ## Descripción del Proyecto
 
-Este repositorio contiene una solución para el despliegue y desmantelamiento de cuentas de usuario de forma masiva. Es ideal para entornos de prueba o laboratorios, donde se requiere gestionar múltiples identidades simultáneamente.
+Al trabajar con sistemas, a veces es necesario crear muchas cuentas de usuario en el sistema. Y cuando ya no hacen falta, eliminarlas. Por eso, he creado dos scripts que pueden ahorrar tiempo que un SysAdmin pueda invertir en tareas más importantes.
 
 ### Contenido del repositorio:
 * `crear_usuarios.sh`: Script para la creación masiva con configuración de seguridad.
@@ -18,10 +18,10 @@ Este repositorio contiene una solución para el despliegue y desmantelamiento de
 ## Características Principales
 
 ### Script de Creación (`crear_usuarios.sh`)
-**Gestión Automatizada:** Crea usuarios y sus respectivos directorios `/home`. Asigna una contraseña temporal y fuerza al usuario a cambiarla en su primer inicio de sesión. Es capaz de procesar listas extensas en cuestión de segundos.
+**Gestión Automatizada:** Crea usuarios y sus respectivos directorios `/home`. Asigna una contraseña con su mismo nombre y la encripta usando el algoritmo SHA-512. Es capaz de procesar listas extensas en cuestión de segundos.
 
 ### Script de Eliminación (`eliminar_usuarios.sh`)
-**Limpieza Profunda:** Elimina la cuenta y borra de forma recursiva la carpeta personal (`userdel -r`). Además, implementa redirección de errores (`2>/dev/null`) para una ejecución limpia.
+**Limpieza Profunda:** Elimina la cuenta y borra de forma recursiva la carpeta personal (`userdel -r`).
 
 ---
 
