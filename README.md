@@ -33,7 +33,7 @@ Será necesario instalar whois para poder emplear el comando `mkpasswd`. Tambié
 ```bash
 # Instalación de whois
 sudo apt update
-sudo apt install who -y
+sudo apt install whois -y
 
 # Dar permisos de ejecución
 chmod +x crear_usuarios.sh eliminar_usuarios.sh
