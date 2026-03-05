@@ -28,7 +28,7 @@ Al trabajar con sistemas, a veces es necesario crear muchas cuentas de usuario e
 ## Guía de Uso
 
 ### 1. Preparación del entorno
-Será necesario instalar whois para poder emplear el comando `mkpasswd`. También será importante dar permisos a los archivos para que los scripts se ejecuten sin problemas:
+Será necesario instalar whois para poder emplear el comando `mkpasswd`. También será importante dar permisos a los scripts para que se ejecuten sin problemas:
 
 ```bash
 # Instalación de whois
